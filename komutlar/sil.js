@@ -1,37 +1,38 @@
-const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
+const ayarlar = require('../ayarlar.json')
+const db = require('wio.db')
+const Discord = require('discord.js')
 
-exports.run = function(client, message, args) {
-  
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`Bu komutu kullanabilmek için **Mesajları Yönet** iznine sahip olmalısın!`);
-  
-if(isNaN(args[0])) {
-  var errembed = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .addField(`Yanlış Kullanım!`, `Bir rakam yazmalısın!`)
-    .addField(`Doğru Kullanım:`, `${ayarlar.prefix}sil <temizlenecek mesaj sayısı>`)
-return message.channel.send(errembed);
+exports.run = async(client, message, args) => {
+
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("» Bunu Yapabilmek için `Mesajları Yönet` Yetkisine Sahip Olmalısın.");
+
+    let sayı = parseInt(args[0])
+
+    if(!sayı > 2) return message.channel.send("» En az 2 Adet Mesaj Silebilirsin!")
+
+    if(sayı < 201) {
+
+        message.channel.bulkDelete(sayı).catch(err => {
+            return message.channel.send("» 14 Günden Eski Mesajları Discord API Silmeme İzin vermiyor.")
+        })
+
+        let embed = new Discord.MessageEmbed()
+        .setThumbnail(client.user.displayAvatarURL())
+        .setTitle("<a:tik:776899538723405905> » Başarıyla Mesajlar Silindi.")
+        .setFooter("DEAV")
+        .setDescription(`» Silinen Mesaj Sayısı: **${sayı}**\n\n» Silen Yetkili: ${message.author}`)
+        message.channel.send(embed).then(msj => {
+            msj.delete( {timeout: 3000} )
+        })
+
+    } else {
+        return message.channel.send("» En Fazla 200 Mesaj Silebilirsin!")
+    }
 }
-  
-if (args[0] < 1) return message.reply("**1** adetten az mesaj silemem!")
-if (args[0] > 100) return message.reply("**100** adetten fazla mesaj silemem!")
-  
-message.channel.bulkDelete(args[0]).then(deletedMessages => {
-if (deletedMessages.size < 1) return message.reply("Hiç mesaj silemedim! _(**14** günden önceki mesajları silemem!)_");
-})
-message.channel.send(`**${args[0]}** adet mesaj başarıyla silindi!`)
-};
-
-exports.conf = {
-  enabled: true, 
-  guildOnly: false, 
-  aliases: ["sil", "mesaj-sil", "mesajları-sil"],
-  permLevel: `Mesajları yönet yetkisine sahip olmak gerekir.`
-};
 
 exports.help = {
-  name: 'sil',
-  category: 'moderasyon',
-  description: 'Belirtilen miktarda mesaj siler.',
-  usage: '.sil <miktar>'
-};
+    name: "sil"
+}
+exports.conf = {
+    aliases: ["temizle","clear"]
+}

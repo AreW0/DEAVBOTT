@@ -6,7 +6,7 @@ let istek = args.slice(0).join(' ')
 if(!istek) return message.channel.send('**Bug Bildirmek için Bir Bug Yazınız.** :x:')
 
 const embed = new Discord.MessageEmbed()
-.setTitle("Destiny Bug Sistemi")
+.setTitle("DEAV Bug Sistemi")
 .setColor('BLUE')
 .setDescription(`**Bug Kanalı** ${message.channel.name} \n **Bug Bildirilen Sunucu** \`${message.guild.name}\` \n **Bugu Bildiren Kullanıcı** <@${message.author.id}> \n **Bildirilen Bug :** \`${istek}\``)
 client.channels.cache.get('744536225230094360').send(embed)

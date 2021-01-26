@@ -6,11 +6,11 @@ exports.run = async (client, message, args) => {
 
 const kullanıcı = new Discord.MessageEmbed()
 .setColor("RANDOM")
-.setAuthor("Destiny v12 sürümüyle yeniden sizlerle.")
-.setTitle("<a:Yldz:742698148329291826> Destiny Kullanıcı Komutları <a:Yldz:742698148329291826>")
+.setAuthor("DEAV v12 sürümüyle yeniden sizlerle.")
+.setTitle(":star: DEAV Kullanıcı Komutları :star:")
  .setTimestamp()
-.setDescription("<a:yan:750065080741134407> **-avatar** = Avatarınıza bakarsınız. <a:developeremoji:749525084586115153> \n <a:yan:750065080741134407> **-yetkilerim** = Yetkilerini görürsün. <a:developeremoji:749525084586115153> \n <a:yan:750065080741134407> **-profil** = Profilini görürsün. <a:developeremoji:749525084586115153> \n <a:yan:750065080741134407> **-sunucuresmi** = Sunucu resmini gösterir. <a:developeremoji:749525084586115153> \n <a:yan:750065080741134407> **-ping** = Botun Pingine Bakarsın. <a:developeremoji:749525084586115153> \n <a:yan:750065080741134407> **-id** = Birisinin id'sine Bakarsın. <a:developeremoji:749525084586115153> \n <a:yan:750065080741134407> **-davet** = Beni Sunucuna Ekle. <a:developeremoji:749525084586115153> \n <a:yan:750065080741134407> **-botbilgi** = Bot istatistiklerini görürsünüz. <a:developeremoji:749525084586115153> \n <a:yan:750065080741134407> **-bug-bildir** = Yazdığınız bug'u yapımcılarıma bildirir. <a:developeremoji:749525084586115153>")
-.setImage("https://cdn.discordapp.com/attachments/744536225230094360/751100899836821534/Night_Sky_Mountain_Decorative_Border_Youtube_Thumbnail.png")
+.setDescription(":gear: **-avatar** = Avatarınıza bakarsınız. <a:developeremoji:749525084586115153> \n :gear: **-yetkilerim** = Yetkilerini görürsün. <a:developeremoji:749525084586115153> \n :gear: **-profil** = Profilini görürsün. <a:developeremoji:749525084586115153> \n :gear: **-sunucuresmi** = Sunucu resmini gösterir. <a:developeremoji:749525084586115153> \n :gear: **-ping** = Botun Pingine Bakarsın. <a:developeremoji:749525084586115153> \n :gear: **-id** = Birisinin id'sine Bakarsın. <a:developeremoji:749525084586115153> \n :gear: **-davet** = Beni Sunucuna Ekle. <a:developeremoji:749525084586115153> \n :gear: **-botbilgi** = Bot istatistiklerini görürsünüz. <a:developeremoji:749525084586115153> \n :gear: **-bug-bildir** = Yazdığınız bug'u yapımcılarıma bildirir. <a:developeremoji:749525084586115153>")
+.setImage("https://media.discordapp.net/attachments/802564723744702534/802986760266448936/standard_1.gif")
 message.channel.send(kullanıcı)
 }
 

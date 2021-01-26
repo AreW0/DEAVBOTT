@@ -1,5 +1,32 @@
 {
-  "prefix": "Prefix",
-  "sahip": ["SahipID"],
-  "token": "Token"
+  "prefix": "-",
+  "sahip": ["606787214004846593"],
+  "token": "ODAzNzExNjk5ODg1ODgzNDMz.YBBw2Q.oixY7lArH7uXTN2OIagchmri6Ok",
+  
+  "sunucuID": "",
+  
+  "kayıtLOG": "",
+  "isimLOG": "",
+  
+  
+  "tag" : "",
+  "tagLOG" : "",
+  "tagROL" : "",
+  
+  "kayıtsızROL": "",
+  "kayıtlıROL": "",
+  "botROL": "",
+  
+
+  "kadınROL": "",
+  "erkekROL": "",
+  
+  "jailLOG" : "",
+  "jailROL": "",
+
+
+  "yetkiliROL": "",
+  "giriskanal": ""
+
 }
+
